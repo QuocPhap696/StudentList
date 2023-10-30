@@ -1,16 +1,14 @@
-import StudentService from "../../service/StudentService";
+// import StudentService from "../../service/StudentService";
 import { NavLink, useNavigate, useSearchParams } from 'react-router-dom';
 import Spinner from '../layout/Spinner';
 import { useEffect, useState } from "react";
 import swal from 'sweetalert';
 import { React } from 'react';
 import Detail from './Detail'
-// import { useDispatch, useSelector } from "react-redux";
-// import LocationService from '../../service/LocationService';
-import { Col, Input, Typography } from 'antd';
+// import { Col, Input, Typography } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDeleteStudent, fetchSearchStudent, searchFilterChange } from "../../redux/studentSlice";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const StudentList = () => {
     // const [stuList, setStuList] = useState([])

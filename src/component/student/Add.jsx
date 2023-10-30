@@ -2,13 +2,13 @@ import { yupResolver } from "@hookform/resolvers/yup";
 import { useState } from "react"
 import { useForm } from "react-hook-form";
 import * as yup from "yup"
-import StudentService from "../../service/StudentService";
+// import StudentService from "../../service/StudentService";
 import { useNavigate } from "react-router-dom";
 import { NavLink } from "react-router-dom";
 import swal from "sweetalert";
 import { useDispatch } from 'react-redux';
 import { fetchCreateStudent } from "../../redux/studentSlice";
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+
 
 const createSchema = yup.object({
     FullName: yup.string()
