@@ -19,17 +19,11 @@ const editSchema = yup.object({
         .positive()
         .max(100, "Tuổi Không Được Lớn Hơn 100")
         .typeError("Vui Lòng Nhập Tuổi"),
-    Phone: yup.number()
-        .typeError("Vui Lòng Nhập Số")
-        .test({
-            message: "SDT nhỏ hơn 12 kí tự",
-            test: (val) => {
-                if (val) {
-                    return val.toString().length < 12;
-                }
-                return true;
-            },
-        }),
+        Phone: yup.string() 
+        .required("Nhập SDT")
+        .matches(/^\d{0,12}$/, { message: 'Số điện thoại phải có tối đa 12 kí tự và bắt đầu từ số 0' })
+        .min(10, "SDT ít nhất 10 kí tự và bắt đầu từ số 0")
+        .typeError("Vui lòng nhập SDT"),
     Address: yup.string()
         .required("Vui Lòng Nhập Địa Chỉ")
         .max(100, "Thông Tin Phải Ít Hơn 100 Kí Tự "),
@@ -82,19 +76,19 @@ const Edit = () => {
     return (
         <div className="container d-flex justify-content-center">
             <div className="row mt-3 mb-3" id="formAddStudent">
-                <h2 className="text-primary text-center mt-4">Edit Student</h2>
+                <h2 className="text-primary text-center mt-2" style={{ backgroundColor: "#efefef" }}>Edit Student</h2>
                 <form onSubmit={handleSubmit(editStudent)}>
-                <div className="text-success">
+                <div className="text">
                     <div className="row mt-3 mb-3">
                         <div className="form-group col-lg-6 ">
-                            <label className="label-form ">FullName</label>
+                            <label className="label-form fw-bold">FullName</label>
                             <input type="text" name="" id=""
                                 className={`${errors?.FullName?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('FullName')} defaultValue={student.FullName} />
                             <span className="invalid-feedback" >{errors?.FullName?.message}</span>
                         </div>
                         <div className="form-group col-lg-6 ">
-                            <label className="label-form">Age</label>
+                            <label className="label-form fw-bold">Age</label>
                             <input type="number" name="" id=""
                                 className={`${errors?.Age?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('Age')} defaultValue={student.Age} />
@@ -104,7 +98,7 @@ const Edit = () => {
 
                     <div className="row mt-3 mb-3">
                         <div className="form-group col-lg-6 ">
-                            <label className="label-form">Gender</label>
+                            <label className="label-form fw-bold">Gender</label>
                             <select type="text" name="" id=""
                                 className={`${errors?.Gender?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('Gender')} defaultValue={student.Gender}>
@@ -115,7 +109,7 @@ const Edit = () => {
                         </div>
 
                         <div className="form-group col-lg-6 ">
-                            <label className="label-form">Phone</label>
+                            <label className="label-form fw-bold">Phone</label>
                             <input type="text" name="" id=""
                                 className={`${errors?.Phone?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('Phone')} defaultValue={student.Phone} />
@@ -125,17 +119,17 @@ const Edit = () => {
 
                     <div className="row mt-3 mb-3">
                         <div className="form-group col-lg-6 ">
-                            <label className="label-form">Address</label>
+                            <label className="label-form fw-bold">Address</label>
                             <textarea type="text" name="" id=""
-                                className={`${errors?.address?.message ? 'form-control is-invalid' : 'form-control'}`}
+                                className={`${errors?.Address?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('Address')} defaultValue={student.Address} />
                             <span className="invalid-feedback">{errors?.Address?.message}</span>
                         </div>
 
                         <div className="form-group col-lg-6  ">
-                            <label className="label-form">Email</label>
+                            <label className="label-form fw-bold">Email</label>
                             <input type="text" name="" id="email"
-                                className={`${errors?.email?.message ? 'form-control is-invalid' : 'form-control'}`}
+                                className={`${errors?.Email?.message ? 'form-control is-invalid' : 'form-control'}`}
                                 {...register('Email')} defaultValue={student.Email} />
                             <span className="invalid-feedback">{errors?.Email?.message}</span>
                         </div>

@@ -53,7 +53,7 @@ const StudentList = () => {
                     back('')
                     // setStuList((preList) => preList.filter((stu) => stu.id !== id));
                 } else {
-                    // Xử lý trường hợp không xóa
+                    
                 }
             });
         } catch (error) { }
@@ -96,10 +96,10 @@ const StudentList = () => {
                     </nav>
 
                 </div>
-                <section className="mt-4">
-                    <table className="table table-hover">
-                        <thead>
-                            <tr className="tr">
+                <section className="mt-4 ">
+                    <table className="table table-hover ">
+                        <thead >
+                            <tr >
                                 <th>#</th>
                                 <th>FullName</th>
                                 <th>Age</th>
@@ -112,10 +112,6 @@ const StudentList = () => {
                         </thead>
                         <tbody>
                             {
-                                // stuList.filter(student) => {
-                                //     let filter = searchParams.get("filter");
-                                //     if(!filter)
-                                // }
                                 stuList.length && stuList.map((student) => (
                                     <tr key={student.id}>
                                         <td>{student.id}</td>
