@@ -1,7 +1,7 @@
 import { createAsyncThunk, createSlice } from "@reduxjs/toolkit";
 import StudentService from '../service/StudentService'
 import LocationService from "../service/LocationService";
-import { search } from "fontawesome";
+// import { search } from "fontawesome";
 import { useDispatch } from "react-redux";
 
 // export const fetchStudentById = createAsyncThunk(

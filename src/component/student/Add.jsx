@@ -8,7 +8,7 @@ import { NavLink } from "react-router-dom";
 import swal from "sweetalert";
 import { useDispatch } from 'react-redux';
 import { fetchCreateStudent } from "../../redux/studentSlice";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const createSchema = yup.object({
     FullName: yup.string()

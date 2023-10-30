@@ -10,7 +10,7 @@ import Detail from './Detail'
 import { Col, Input, Typography } from 'antd';
 import { useDispatch, useSelector } from 'react-redux';
 import { fetchDeleteStudent, fetchSearchStudent, searchFilterChange } from "../../redux/studentSlice";
-
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 
 const StudentList = () => {
     // const [stuList, setStuList] = useState([])
