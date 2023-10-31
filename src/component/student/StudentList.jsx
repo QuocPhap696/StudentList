@@ -32,7 +32,7 @@ const StudentList = () => {
         const timeout = setTimeout(() => {
             const action = fetchSearchStudent(search)
             dispatch(action)
-        }, 500)
+        }, 300)
         return () => clearTimeout(timeout)
     }, [search])
 
@@ -71,9 +71,8 @@ const StudentList = () => {
             <div className="container mt-3">
                 {idTour && <Detail id={idTour} />}
                 <h2 className="text-danger text-center mt-4" style={{ backgroundColor: "#efefef" }}> Student List</h2>
-
                 <div>
-                    <nav class="navbar navbar-light bg-light">
+                    <nav className="navbar navbar-light bg-light">
                         <div style={{ padding: "0 0 20px 20px" }}>
                             <button className="btn btn-sm btn-primary mt-4" style={{}}>
                                 <NavLink className="nav-link " style={{ color: "white" }} to={'/student/create'}>
@@ -84,15 +83,15 @@ const StudentList = () => {
                         </div>
 
                         <div>
-                            <div class="container-fluid">
-                                <form class="d-flex">
-                                    <input class="form-control me-2" type="search"
+                            <div className="container-fluid">
+                                <form className="d-flex">
+                                    <input className="form-control me-2" type="search"
                                         placeholder="Search" aria-label="Search"
                                         onChange={(e) => handleSearchTextChange(e)}
                                         value={search} />
                                 </form>
-                            </div></div>
-
+                            </div>
+                            </div>
                     </nav>
 
                 </div>
@@ -144,21 +143,21 @@ const StudentList = () => {
                         </tbody>
                     </table>
                     
-                    <nav aria-label="...">
-                        <ul class="pagination">
-                            <li class="page-item disabled">
-                                <a class="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
+                    {/* <nav aria-label="...">
+                        <ul className="pagination">
+                            <li className="page-item disabled">
+                                <a className="page-link" href="#" tabindex="-1" aria-disabled="true">Previous</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">1</a></li>
-                            <li class="page-item active" aria-current="page">
-                                <a class="page-link" href="#">2</a>
+                            <li className="page-item"><a className="page-link" href="#">1</a></li>
+                            <li className="page-item active" aria-current="page">
+                                <a className="page-link" href="#">2</a>
                             </li>
-                            <li class="page-item"><a class="page-link" href="#">3</a></li>
-                            <li class="page-item">
-                                <a class="page-link" href="#">Next</a>
+                            <li className="page-item"><a className="page-link" href="#">3</a></li>
+                            <li className="page-item">
+                                <a className="page-link" href="#">Next</a>
                             </li>
                         </ul>
-                    </nav>
+                    </nav> */}
                 </section>
 
                 {/* Modal hiển thị thông tin học sinh */}
